@@ -15,8 +15,8 @@ export class CarService {
     let getall= this.apiUrl + "/cars/getall"
     return this.httpClient.get<ListResponseModel<Car>>(getall);
   }
-  getCarDetail(): Observable<CarDetailDto>{
+  getCarDetail(carId:number): Observable<ListResponseModel<CarDetailDto>>{
     let detailUrl = this.apiUrl + "/cars/getdetail"
-    return this.httpClient.get<CarDetailDto>(detailUrl)
+    return this.httpClient.get<ListResponseModel<CarDetailDto>>(detailUrl)
   }
 }
